@@ -1,4 +1,22 @@
 @import '/node_modules/normalize.css/normalize.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap');
+
 @import 'modules/variables';
-@import 'modules/base'
+@import 'modules/base';
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+#header {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  text-align: center;
+}
