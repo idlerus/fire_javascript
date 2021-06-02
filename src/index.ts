@@ -16,10 +16,6 @@ let backgroundDir = 1;
 let backgroundLightDefault = canvas.height/2+800;
 let backgroundLight = backgroundLightDefault;
 
-console.log(backgroundLightDefault, backgroundLight);
-
-
-
 canvas.width = document.body.clientWidth;
 canvas.height = document.body.clientHeight;
 canvas.style.position = 'absolute';
@@ -60,14 +56,6 @@ function draw()
     }
 }
 
-function toggleBackgroundDir()
-{
-    if(backgroundDir === 1)
-        backgroundDir = 0;
-    else
-        backgroundDir = 1;
-}
-
 function background()
 {
     if(backgroundDir == 1)
@@ -76,12 +64,21 @@ function background()
         backgroundLight -= backgroundLightSpeed;
 
     if(backgroundLight > backgroundLightDefault+100)
-        toggleBackgroundDir();
+    {
+        backgroundDir = 0;
+    }
     else if (backgroundLight < backgroundLightDefault-100)
-        toggleBackgroundDir();
+    {
+        backgroundDir = 1;
+    }
 
     if(Math.floor(Math.random() * 5) === 1)
-        toggleBackgroundDir();
+    {
+        if(backgroundDir === 1)
+            backgroundDir = 0;
+        else
+            backgroundDir = 1;
+    }
 
 
     let grad = ctx.createRadialGradient(canvas.width/2, canvas.height*2, canvas.width, canvas.width/2, canvas.height*2, backgroundLight);

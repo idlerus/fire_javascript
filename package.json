@@ -1,5 +1,5 @@
 {
-  "name": "landing page",
+  "name": "landingPage",
   "version": "1.0.0",
   "description": "landing page, using typescript and sass",
   "main": "index.js",
